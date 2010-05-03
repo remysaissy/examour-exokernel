@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="210mm"
+   height="297mm"
+   id="svg3988">
+  <defs
+     id="defs3990" />
+  <g
+     id="layer1">
+    <text
+       x="144.28571"
+       y="57.790752"
+       style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3996"
+       xml:space="preserve"><tspan
+         x="144.28571"
+         y="57.790752"
+         id="tspan3998">ExAmour's memory components</tspan></text>
+    <text
+       x="242.85715"
+       y="115.21933"
+       style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text4000"
+       xml:space="preserve"><tspan
+         x="242.85715"
+         y="115.21933"
+         id="tspan4002">Components view</tspan></text>
+    <text
+       x="201.71429"
+       y="394.07648"
+       style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text4004"
+       xml:space="preserve"><tspan
+         x="201.71429"
+         y="394.07648"
+         id="tspan4006">Components interactions</tspan></text>
+    <g
+       transform="translate(-22,-8.28573)"
+       id="g4018">
+      <rect
+         width="211.42857"
+         height="160"
+         ry="34.264217"
+         x="60"
+         y="180.93361"
+         style="fill:none;stroke:black;stroke-opacity:1"
+         id="rect4008" />
+      <text
+         x="105.14285"
+         y="234.93362"
+         style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text4010"
+         xml:space="preserve"><tspan
+           x="105.14285"
+           y="234.93362"
+           id="tspan4012">Physical</tspan><tspan
+           x="105.14285"
+           y="269.93362"
+           id="tspan4014">memory</tspan><tspan
+           x="105.14285"
+           y="304.93362"
+           id="tspan4016">allocator</tspan></text>
+    </g>
+    <g
+       transform="translate(210.4286,-8.28573)"
+       id="g4025">
+      <g
+         id="g4056">
+        <rect
+           width="211.42857"
+           height="160"
+           ry="34.264217"
+           x="60"
+           y="180.93361"
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect4027" />
+        <text
+           x="101.14285"
+           y="250.93362"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text4029"
+           xml:space="preserve"><tspan
+             x="101.14285"
+             y="250.93362"
+             id="tspan4035">Segment</tspan><tspan
+             x="101.14285"
+             y="285.93362"
+             id="tspan4054">allocator</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(482.8572,-14.28573)"
+       id="g4037">
+      <g
+         transform="translate(-32.00005,0)"
+         id="g4071">
+        <rect
+           width="211.42857"
+           height="160"
+           ry="34.264217"
+           x="52"
+           y="186.93361"
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect4039" />
+        <text
+           x="105.14285"
+           y="234.93362"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text4041"
+           xml:space="preserve"><tspan
+             x="105.14285"
+             y="234.93362"
+             id="tspan4047">Kernel</tspan><tspan
+             x="105.14285"
+             y="269.93362"
+             id="tspan4067">memory</tspan><tspan
+             x="105.14285"
+             y="304.93362"
+             id="tspan4069">allocator</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(0.5712,15.71434)"
+       id="g3800">
+      <path
+         d="M 737.14288 470.93362 A 328.57144 27.142857 0 1 1  80,470.93362 A 328.57144 27.142857 0 1 1  737.14288 470.93362 z"
+         transform="matrix(1.082049,0,0,1.730059,-60.66548,-323.8094)"
+         style="fill:none;stroke:black;stroke-opacity:1"
+         id="path3794" />
+      <text
+         x="309.14285"
+         y="495.21933"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text3796"
+         xml:space="preserve"><tspan
+           x="309.14285"
+           y="495.21933"
+           style="font-size:20px"
+           id="tspan3798">Environments</tspan></text>
+    </g>
+    <g
+       transform="translate(-23.5714,646)"
+       id="g4082">
+      <rect
+         width="211.42857"
+         height="160"
+         ry="34.264217"
+         x="60"
+         y="180.93361"
+         style="fill:none;stroke:black;stroke-opacity:1"
+         id="rect4084" />
+      <text
+         x="105.14285"
+         y="234.93362"
+         style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text4086"
+         xml:space="preserve"><tspan
+           x="105.14285"
+           y="234.93362"
+           id="tspan4088">Physical</tspan><tspan
+           x="105.14285"
+           y="269.93362"
+           id="tspan4090">memory</tspan><tspan
+           x="105.14285"
+           y="304.93362"
+           id="tspan4092">allocator</tspan></text>
+    </g>
+    <g
+       transform="translate(208.8572,446)"
+       id="g4094">
+      <g
+         id="g4096">
+        <rect
+           width="211.42857"
+           height="160"
+           ry="34.264217"
+           x="60"
+           y="180.93361"
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect4098" />
+        <text
+           x="101.14285"
+           y="250.93362"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text4100"
+           xml:space="preserve"><tspan
+             x="101.14285"
+             y="250.93362"
+             id="tspan4102">Segment</tspan><tspan
+             x="101.14285"
+             y="285.93362"
+             id="tspan4104">allocator</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(481.2858,634)"
+       id="g4106">
+      <g
+         transform="translate(-32.00005,0)"
+         id="g4108">
+        <rect
+           width="211.42857"
+           height="160"
+           ry="34.264217"
+           x="52"
+           y="186.93361"
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect4110" />
+        <text
+           x="105.14285"
+           y="234.93362"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text4112"
+           xml:space="preserve"><tspan
+             x="105.14285"
+             y="234.93362"
+             id="tspan4114">Kernel</tspan><tspan
+             x="105.14285"
+             y="269.93362"
+             id="tspan4116">memory</tspan><tspan
+             x="105.14285"
+             y="304.93362"
+             id="tspan4118">allocator</tspan></text>
+      </g>
+    </g>
+    <path
+       d="M 235.6954,826.43361 L 281.01898,787.43361"
+       inkscape:connection-start="#g4082"
+       inkscape:connection-end="#g4094"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path4124" />
+    <path
+       d="M 377.55721,626.43361 L 380.23298,554.29075"
+       inkscape:connection-start="#g4094"
+       inkscape:connection-end="#g3800"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path4132" />
+    <path
+       d="M 471.01735,787.43361 L 510.55417,820.43361"
+       inkscape:connection-start="#g4094"
+       inkscape:connection-end="#g4106"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path4156" />
+  </g>
+</svg>

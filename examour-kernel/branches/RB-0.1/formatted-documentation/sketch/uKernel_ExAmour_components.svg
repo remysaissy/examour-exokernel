@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44.1"
+   sodipodi:docbase="/home/remy/Modelisation_ukernel_examour"
+   sodipodi:docname="uKernel_ExAmour_components.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3054"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="632.85714"
+     inkscape:document-units="px"
+     inkscape:current-layer="g1953"
+     showgrid="false"
+     inkscape:window-width="1015"
+     inkscape:window-height="689"
+     inkscape:window-x="0"
+     inkscape:window-y="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="178.85715"
+       y="39.505039"
+       id="text1872"><tspan
+         sodipodi:role="line"
+         id="tspan1874"
+         x="178.85715"
+         y="39.505039"
+         style="font-size:32px">Ukernel ExAmour's LibOS</tspan></text>
+    <g
+       id="g1886"
+       transform="translate(0,140)">
+      <g
+         id="g1945"
+         transform="translate(-68,50.00003)">
+        <rect
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect1880"
+           width="142.85715"
+           height="145.71428"
+           x="108.57143"
+           y="123.79076"
+           ry="35.821465" />
+        <text
+           xml:space="preserve"
+           style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           x="181.14285"
+           y="172.07648"
+           id="text1882"><tspan
+             style="text-align:center;text-anchor:middle"
+             sodipodi:role="line"
+             id="tspan1884"
+             x="181.14285"
+             y="172.07648">EM</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1929"
+             sodipodi:role="line"
+             x="181.14285"
+             y="202.07648">(Event</tspan><tspan
+             id="tspan1931"
+             sodipodi:role="line"
+             x="181.14285"
+             y="232.07648"><tspan
+   id="tspan1935"
+   style="text-align:center;text-anchor:middle">Manager</tspan>)</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g1891"
+       transform="translate(195.8571,190)">
+      <g
+         id="g1911">
+        <rect
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect1893"
+           width="142.85715"
+           height="145.71428"
+           x="108.57143"
+           y="123.79076"
+           ry="35.821465" />
+        <text
+           xml:space="preserve"
+           style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           x="181.14285"
+           y="174.07648"
+           id="text1895"><tspan
+             style="text-align:center;text-anchor:middle"
+             sodipodi:role="line"
+             id="tspan1897"
+             x="181.14285"
+             y="174.07648">SM</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1907"
+             sodipodi:role="line"
+             x="181.14285"
+             y="204.07648">(Segment</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1909"
+             sodipodi:role="line"
+             x="181.14285"
+             y="234.07648">Manager)</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g1899"
+       transform="translate(459.7143,190)">
+      <g
+         id="g1922">
+        <rect
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect1901"
+           width="142.85715"
+           height="145.71428"
+           x="108.57143"
+           y="123.79076"
+           ry="35.821465" />
+        <text
+           xml:space="preserve"
+           style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           x="179.14285"
+           y="174.07648"
+           id="text1903"><tspan
+             style="text-align:center;text-anchor:middle"
+             sodipodi:role="line"
+             id="tspan1905"
+             x="179.14285"
+             y="174.07648">TM</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1918"
+             sodipodi:role="line"
+             x="179.14285"
+             y="204.07648">(Thread</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1920"
+             sodipodi:role="line"
+             x="179.14285"
+             y="234.07648">manager)</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g1953"
+       transform="translate(194.2857,-50.5714)">
+      <g
+         id="g1979">
+        <rect
+           style="fill:none;stroke:black;stroke-opacity:1"
+           id="rect1957"
+           width="142.85715"
+           height="145.71428"
+           x="108.57143"
+           y="123.79076"
+           ry="35.821465" />
+        <text
+           xml:space="preserve"
+           style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           x="181.14285"
+           y="174.07648"
+           id="text1959"><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan1965"
+             sodipodi:role="line"
+             x="181.14285"
+             y="174.07648">Ukernel's</tspan><tspan
+             id="tspan1977"
+             style="text-align:center;text-anchor:middle"
+             sodipodi:role="line"
+             x="181.14285"
+             y="204.07648">boot env</tspan></text>
+      </g>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:9,3;stroke-dashoffset:0;marker-end:url(#Arrow1Lend)"
+         d="M 302.35713,212.0502 L 183.92857,320.67422"
+         id="path1993"
+         transform="translate(-194.2857,50.5714)"
+         inkscape:connector-type="polyline"
+         inkscape:connection-start="#g1979"
+         inkscape:connection-end="#g1886" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:9,3;stroke-dashoffset:0;marker-end:url(#Arrow1Lend)"
+         d="M 374.76487,219.43364 L 375.37793,313.29076"
+         id="path1995"
+         transform="translate(-194.2857,50.5714)"
+         inkscape:connector-type="polyline"
+         inkscape:connection-start="#g1979"
+         inkscape:connection-end="#g1891" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:9,3;stroke-dashoffset:0;marker-end:url(#Arrow1Lend)"
+         d="M 446.21427,211.26901 L 567.78573,321.45538"
+         id="path1997"
+         transform="translate(-194.2857,50.5714)"
+         inkscape:connector-type="polyline"
+         inkscape:connection-start="#g1979"
+         inkscape:connection-end="#g1899" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:9,3;stroke-dashoffset:0;marker-end:url(#Arrow1Lend)"
+         d="M 20,106.6479 L 97.142857,106.6479"
+         id="path6606"
+         transform="translate(-194.2857,50.5714)"
+         inkscape:connector-type="polyline" />
+      <text
+         xml:space="preserve"
+         style="font-size:24px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="105.71429"
+         y="112.36218"
+         id="text7493"
+         transform="translate(-194.2857,50.5714)"><tspan
+           sodipodi:role="line"
+           id="tspan7495"
+           x="105.71429"
+           y="112.36218">One time call</tspan></text>
+    </g>
+  </g>
+</svg>
