@@ -1,6 +1,0 @@
-#Sat Sep 27 13:52:22 CEST 2008
-content-types/enabled=true
-content-types/org.eclipse.cdt.core.cHeader/file-extensions=h
-content-types/org.eclipse.cdt.core.cSource/file-extensions=c,s
-eclipse.preferences.version=1
-line.separator=\n
