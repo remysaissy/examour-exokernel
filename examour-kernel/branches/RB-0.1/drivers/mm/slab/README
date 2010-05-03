@@ -1,8 +1,0 @@
-			** Slab allocator **
-
-This directory contains code for a slab allocator.
-Even though this code  targets to run in the libOS part
-of the ExAmour kernel, it doesn't stick to ExAmour and
-can be used in libOS.
-
-ExAmour's queue.h is used for cache and slabs management.
