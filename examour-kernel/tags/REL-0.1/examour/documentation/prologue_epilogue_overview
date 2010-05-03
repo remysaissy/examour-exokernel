@@ -1,0 +1,15 @@
+			** exAmour's prologue/epilogue **
+
+The prologue and the epilogue is a way to defer non critical process
+context saving and restoring to the userspace.
+It is intended to provide a greater efficiency, flexibility and to
+speedup the context switch process.
+
+In exAmour, both the prologue and the epilogue are optionnal.
+Indeed, the kernel automatically saves the segment selector registers
+and the general purpose registers, therefore, a process which need a
+prologue and an epilogue will typically need either to modify the
+values the latter or to save/restore other informations.
+
+It is important to note that during a prologue/epilogue, the env is
+executed with its segment selectors and its allocated stack0.

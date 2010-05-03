@@ -1,0 +1,40 @@
+			** Exception and irq forwarding **
+
+In exAmour, the exceptions and irqs are forwarded to a user handler
+as soon as possible and when the user env specified one.
+However some exceptions are critical and then take advantage of a
+special treatment.
+
+Fault and abort exceptions that can be handled by a user env
+are forwarded and if none has been specified, they are handled
+by the kernel.
+An example of that kind of exception is the general protection
+fault on intel architecture.
+
+Fault and abort exceptions that cannot be handled by a user env
+are directly handled by the kernel.
+An example of that kind of exception is the double fault on intel
+architecture which can lead to a reboot of the machine if not
+handled correctly.
+
+Exception and irq forwarding flow chart:
+
+ event (exception or interruption)	kernel				user env
+      | the kernel is signaled of an
+      | event in the execution flow
+      |--------------------------------->|
+					 | after saving the
+				         | critical informations
+					 | of the env, the handler
+					 | is called
+					 |--------------------------------->|
+									    |
+					   once handled, control is returned|
+					   back to the kernel		    |
+					 |<---------------------------------|
+	kernel ack the handling and	 |
+	continue normal execution flow   |
+      |<---------------------------------|
+
+In case of no user env handler, kernel env handler is called.
+

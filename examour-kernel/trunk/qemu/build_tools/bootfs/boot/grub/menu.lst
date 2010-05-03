@@ -1,0 +1,9 @@
+default		0
+timeout		5
+color cyan/blue white/blue
+
+title		ExAmour
+root		(fd0)
+kernel		/examour
+savedefault
+boot

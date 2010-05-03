@@ -1,0 +1,174 @@
+			Ce document est relatif :
+		     aux pilotes materiel d'ExAmour
+
+
+SOMMAIRE
+--------
+
+1) Caracteristiques
+
+2) Methode de classement/differenciation
+
+3) Chargement/dechargement/rechargement
+
+4) Utilisation de pilote materiel
+
+
+
+1) CARACTERISTIQUES
+-------------------
+
+    Les pilotes materiel sont definis par la caracteristique suivante:
+ils ont la necessite d'avoir acces directement aux fonctionnalitees
+materielles (acces aux cartes reseau, Bus (IDE, ...), disques,
+cartes graphiques, ...)
+
+On pourra citer comme types de pilote materiel :
+- gestionnaire de disque
+- gestionnaire de BUS (USB, IDE, ...)
+- gestionnaire du controlleur d'affichage (carte graphique)
+
+Les pilotes materiel peuvent etre marques comme critique, ceci par
+l'intermediaire d'un indicateur positionne lors du remplissage de la
+structure dedie avec le driver en question. Cet indicateur reste
+neanmoins modifiable a tout moment a la condition expresse que le
+pilote ne soit pas charge. Ce marquage permet la differenciation entre
+un pilote necessaire a la sauvegarde de l'integrite du systeme et un
+pilote "utile" au systeme (exemple d'un pilote serie face a un pilote
+de gestion de disque dans le cas d'un ordinateur dit "de bureau").
+
+    Les pilotes materiel sont repertories dans une structure dediee dont
+la position (physique/en memoire) est donnee au demarrage de la
+machine (la methode re renseignement de cette information reste a
+definir). Quand un pilote materiel doit etre ajoute au systeme il doit
+etre integre a cette structure prealablement a son chargement par le
+noyau.
+    L'insertion dans la structure du systeme de stockage des pilotes
+materiel exclura les doublons pour une meme fonctionnalite/ressource
+(IDE, USB, carte reseau XYZ,...). Ce point est a definir.
+De ce fait, en cas de remplacement de pilote materiel (charge ou non)
+dans la structure dediee l'ancien est suprimme et le nouveau le
+remplace. Le nouveau sera utilise au prochain (re)chargement de ce
+type de pilote materiel.
+
+
+
+
+2) METHODE DE CLASSEMENT/DIFFERENCIATION
+----------------------------------------
+
+La liste de correspondance :
+       type de pilote/valeur du champ d'identification
+est fournie par le fichier hwdrv.h situee dans les sources du noyau.
+
+    Les pilotes materiels sont stockees sur un media accessible par le
+noyau au demarrage du systeme.
+Le stockage se fait dans une structure specifique, dont chacun des
+champs est organise comme suit :
+- taille totale de l'entree (en octects), sur 4 octets
+- signature identifiant le pilote (voir paragraphe precedent)
+- indicateur de criticite du pilote, 1 octet
+- code binaire du pilote, taille variable
+
+
+
+3) CHARGEMENT/DECHARGEMENT/RECHARGEMENT
+---------------------------------------
+
+3.1 Chargement :
+
+    Un pilote materiel est charge par le noyau quand une requete de
+chargement est envoyee (par un pilote locigiel le plus souvent).
+Il peut egalement etre initie a la suite d'une demande de "rechargement"
+(voir 3.3 Rechargement).
+
+
+3.2 Dechargement :
+
+    Un pilote materiel est "dechargeable" quand aucun environement ne
+l'utilise. C'est a dire, quand son index d'utilisateur est a 0. Cet
+index et situe dans le pilote ou dans le noyau (a definir)
+
+    Le dechargement est initie par le noyau (pour recupperer de la
+memoire ou apres un "temps d'inutilisation" le plus frequement).
+Il peut egalement etre initie a la suite d'une demande de
+"rechargement" faite au noyau (voir 3.3 Recharegement)
+    Le noyau peut initier un "dechargement force" (decharger un pilote
+materiel utilise) si celui-ci n'a pas ete marque "critique"
+(voir 1 caracteristique).
+
+
+3.3 Rechargement :
+
+    Un pilote est "recharge" quand les conditions suivantes sont remplies :
+- il etait deja charge
+- il n'etait pas utilise
+- le CRC du pilote dans la structure dediee n'est pas identique a
+celui charge en memoire.
+Dans ce cas le pilote en memoire est decharge et celui dans la
+structure dediee est charge.
+
+
+
+4) UTILISATION DE PILOTE MATERIEL
+---------------------------------
+
+Note: on nommera ici EA l'Entitee Appelante
+
+    L'EA fait appel a la fonctionnalite l'appel systeme init_com_drv()
+pour demander a utiliser le pilote.
+    Ceci engendre le chargement en memoire du pilote (si celui-ci ne
+l'etait pas), et l'incrementation du compteur d'utilisateur pour ce
+pilote.
+    Ce compteur sera decremente quand l'EA disparaitra ou fera appel a
+la fonction close_com_drv() qui rompera la liaison et supprimera les
+points d'acces vers le pilote.
+
+synopsis de la conction init_com_drv():
+u_int32_t init_com_drv(uint32_t mode, uint8_t *driver_sig, uint8_t access)
+mode        : 0..n (dependant du pilote)
+driver_sig  : voir "Differenciation des pilotes materiel"
+access	    : droits d'acces souhaites
+
+    Le mode est utilise pour definir comment l'EA souhaite utiliser le
+pilote (recevoir/evoyer les donnees). La table de correspondance des
+index et des fonctionnalite est laissee a la discretion des
+developpeurs. Il est cependant preconise d'utiliser l'index 0 pour la
+presentation de donnees dites "brutes".
+    Le type d'acces defini la/les interaction(s) souhaitee par l'EA.
+Les fonctions possible definies etant (a completer au besoin) :
+lecture, ecriture, commande de fonctionnement.
+Ces fonctions sont representees par les bits de l'octet (les 3 bits de
+poid faible).
+La lecture etant le 3eme, l'ecriture le 2eme, et les commandes le 1er
+(le plus faible).
+Une valeur/signal d'erreur est retournee en cas de probleme, sinon le
+systeme renvois 0.
+
+synopsis de la conction close_com_drv():
+u_int32_t close_com_drv(uint8_t *driver_sig)
+driver_sig  : voir "Differenciation des pilotes materiel"
+    Lors de la reception de cet appel systeme, le noyau rompt la
+communication et les acces (engendres par init_com_drv()) entre
+l'entite ayant fait l'appel et le pilote defini dans la signature.
+Une valeur/signal d'erreur est retournee en cas de probleme, sinon le
+systeme renvois 0.
+
+
+    Suite a un appel reussit a init_com_drv(), le systeme :
+-> aloue un espace memoire dans de la memoire (segment) accessible
+   depuis l'EA qu'il se chargera de faire correspondre aux buffers d'un
+   pilote utilisant de la memoire mapee
+
+ou (si le 1er cas ne peut etre mis en place)
+-> authorise l'EA a utiliser des appels systemes que le noyau
+repercutera vers le pilote materiel. Ces appels etant :
+	read_drv(uint8_t *driver_sig, uint32_t size, uint8_t *datas)
+	write_drv(uint8_t *driver_sig, uint32_t size, uint8_t *datas)
+	cmd_drv(uint8_t *driver_sig, uint32_t size, uint8_t *datas)
+Respectivement : lecture, ecrture, commande de controle du pilote
+
+driver_sig  : voir "Differenciation des pilotes materiel"
+size        : taille des donnees
+data        : donnees
+
