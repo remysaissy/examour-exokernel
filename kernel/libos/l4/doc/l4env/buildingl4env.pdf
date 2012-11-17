@@ -1,0 +1,342 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Error 403</title>
+<link rel="STYLESHEET" type="text/css" href="/styles/1.css">
+</head>
+<body bgcolor="#eeeeee" marginwidth="0" marginheight="0" leftmargin="0" rightmargin="0" topmargin="0" vlink="#ee0000">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr bgcolor="#bbbbbb">
+<td><img src="/images/1x1.gif" height="1" width="1" alt=""></td>
+</tr>
+</table>
+<table class="header" bgcolor="#eeeeee" width="100%" cellspacing="0" cellpadding="0" border="0">
+<!-- <form method="get" action="/cgi-bin/htsearch"> -->
+<tr>
+  <!-- <td align="left" valign="middle">
+       <a href="/search/">Search</a>:
+       <input type="hidden" name="restrict" value="http://os.inf.tu-dresden.de/"/>
+       <input type="text" size="10" name="words" value=""/>
+  </td> -->
+  <td align="right" valign="middle">
+      <a href="http://os.inf.tu-dresden.de/">Operating Systems</a>
+      &middot;
+      <a href="http://www.inf.tu-dresden.de/SyA/gb_index.html">
+      Institute for System Architecture</a>
+      &middot;
+      <a href="http://www.inf.tu-dresden.de">Dept. of CS</a>
+      &middot;
+      <a href="http://www.tu-dresden.de">TU Dresden</a>
+  </td>
+</tr>
+<!-- </form> -->
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr bgcolor="#bbbbbb">
+<td><img src="/images/1x1.gif" height="1" width="1" alt=""></td>
+</tr>
+</table>
+<div align="center">
+<h1 class="bigheader">Error 403</h1>
+</div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr bgcolor="#000000">
+<td><img src="/images/1x1.gif" height="1" width="1" alt=""></td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+<tr>
+<td bgcolor="#ffffff" align="center" valign="top" width="25%">
+<br>
+<table border="0" cellpadding="1" cellspacing="0" bgcolor="#000000" width="97%" id="navbar">
+<tr>
+<td>
+<table bgcolor="#f0f0f0" width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="small" align="left"><a href="?mode=print">[print]</a></td><td align="right"><a href="403.xml.de"><img alt="Deutsch version" border="0" src="/images/flags/de.gif"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">Education</td>
+</tr>
+<tr>
+<td class="navitem">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/Studium/">Lectures</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/project/themen/themen.xml">
+        Topics for theses
+      </a>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">
+      <a href="/forschung.xml">
+        Research
+      </a>
+    </td>
+</tr>
+<tr>
+<td class="navitem">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/drops/">DROPS</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/l4env/">L4Env</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/L4/LinuxOnL4/">L<sup>4</sup>Linux</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/fiasco/">Fiasco</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/vfiasco/">VFiasco</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/L4/">
+        L4-microkernel family
+      </a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/drops/doc.html">
+        Publications
+      </a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/EZAG/">EZAG</a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/past-projects/">Past Projects</a>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">People @ OS</td>
+</tr>
+<tr>
+<td class="navitem">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/people/">
+        Staff
+      </a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/people/#students">
+        Students
+      </a>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">
+      Miscellaneous
+    </td>
+</tr>
+<tr>
+<td class="navitem">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/news/">
+        News
+      </a>
+    </td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/mailman/listinfo/">
+        Mailing lists
+      </a>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">
+      Search
+    </td>
+</tr>
+<tr>
+<td class="navitem">
+      <form method="get" action="http://www.google.com/u/tudd">
+	<input style="border: 1px ridge #531" type="text" name="q" size="20" maxlength="255">
+	<input type="hidden" name="hl" value="en">
+	<input style="margin-top: 0; padding: 2px; border-style: groove" type="submit" name="sa" VALUE="Search">
+	<input type="hidden" name="domains" value="os.inf.tu-dresden.de">
+	<input type="hidden" name="sitesearch" value="os.inf.tu-dresden.de">
+      </form>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="navheader">
+      <a href="/local/">Internal</a>
+    </td>
+</tr>
+<tr>
+<td class="navitem">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>&middot;&nbsp;</td><td id="navitem">
+      <a href="/news/intern/">Local News</a>
+    </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff"><img src="/images/1x1.gif" height="2" alt=""></td>
+</tr>
+</table>
+<br>
+</td><td valign="top">
+<!--Content comes here ...-->
+<br>
+    <div align="center">
+    <h3>
+      Sorry, you don't have the permission to access this page on this
+      server.
+    </h3>
+    </div>
+
+  </td>
+</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr bgcolor="#000000">
+<td><img src="/images/1x1.gif" height="1" width="1" alt=""></td>
+</tr>
+</table>
+<!---- Footer ---->
+<table width="100%">
+<tr>
+<td style="font-size:70%" valign="top">
+<address>
+<a href="mailto:webmaster&amp;#64;os.inf.tu-dresden.de">webmaster@os</a>, <a href="http://os.inf.tu-dresden.de/">home</a>
+</address>
+</td><td align="right" valign="top">
+<div style="font-size:70%"></div>
+</td>
+</tr>
+<tr>
+<td style="font-size:80%; color: #707070" align="center" colspan="2">
+                &middot; Copyright &copy; 2001-2006 Operating Systems Group, TU Dresden |
+		  <a href="/impressum.xml">Impressum</a> &middot; 
+	      </td>
+</tr>
+</table>
+</body>
+</html>

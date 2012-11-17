@@ -1,0 +1,53 @@
+					** ExAmour's global TODO **
+
+NEED TO BE UPDATED.
+[ ] security module
+	[-] basic caps
+	[ ] on creation upcalls locking
+[ ] dynamically reconfigurable timer
+[-] per I/O per environment io access
+[-] ring3 upcalls
+[ ] dynamic libraries
+[-] timeslice based scheduler
+[ ] slab based kmalloc/kfree
+[ ] reentrant interupt stack
+[ ] env_{create,delete,yield} fully functionnal
+[ ] technical documentation
+	[ ] Compiling the kernel
+	[ ] Compiling the drivers
+	[ ] Organization of the source tree
+	[ ] How to write your own ExAmour's component
+	[ ] ExAmour's driver programming
+	[ ] ExAmour's environment programming
+
+
+
+NEW VERSION
+[ ] Continues eash
+	[ ] Performance tests
+		[ ] kernel memory allocator
+		[ ] kernel env allocator
+		[ ] Upcalls speed
+	[ ] User env informations
+		[ ] Env upcalls segment dump
+		[ ] Env status segment dump
+	[ ] I/O allocator
+		[ ] Allocates an I/O
+		[ ] Revoke an I/O
+	[ ] Upcalls allocator
+		[ ] Attach an upcall
+		[ ] Modify/detech an upcall
+	[ ] os::driver submenus
+		[ ] os::driver::fs
+		[ ] os::driver::mm
+		[ ] os::driver::kbd
+		[ ] os::driver::video
+		[ ] os::driver::pci
+		[ ] os::driver::event
+		[ ] os::driver::io
+[ ] Continues ExAmour v0.2
+	[ ] Finish the new memory allocator
+	[ ] Improve interrupt routines mechanism
+	[ ] Improve env management
+	[ ] Add env_yield
+	[ ] Add event forgery

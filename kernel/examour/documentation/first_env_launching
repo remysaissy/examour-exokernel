@@ -1,0 +1,56 @@
+			** exAmour's first environment launching **
+
+@ Layout of an env:
+
+	.code
+		[code of the env]
+	.bss
+	.data
+	.rodata
+	...
+		[data of the env]
+	.uenv_init_memory_map
+		[memory map informations and code]
+		The symbol's name is:
+	bool __init_memory_map(examour_env_section_t *sections,
+		  	       int n_sections,
+			       kevent_cpu_context_t *start_ctx,
+			       ldtr_t *mem_context)
+			__attribute__((__section__(".uenv_code")));
+		This symbol's job is to install the memory model of the
+		new env. (see env_manager)
+
+@ The launching flow chart:
+
+	kernel			current_env (shell)	new_env
+	 |	sys_env_create()	|
+         |<-----------------------------|
+	 |
+         |allocate its stuffs.
+	 |(stack0, esp0, ...)
+         |
+	 |		_init_memory_map()
+	 |--------------------------------------------->| setup its
+							| memory model,
+ 							| and its start
+	 |<---------------------------------------------| time context.
+	 |
+	 |schedule the new env (grants 100ms timeslice)
+	 |
+	 |  return to the current_env
+         |----------------------------->|
+
+
+@ During the very first milliseconds of execution of an env:
+
+	kernel				new_env
+	  | gives cpu to the env
+ 	  |------------------------------->|
+					   |
+		sys_set_permission_map()   | setup its permission map
+	  |<-------------------------------|
+	  |
+	  | updates the permission map
+	  | of the env.
+	  |
+	  |------------------------------->| continue its normal execution flow

@@ -1,0 +1,17 @@
+		** Liste des documentations techniques **
+
+[X] ExAmour's C macro based algorithmic framework
+[ ] X86 segmented memory support in gcc
+	[ ] Genesis
+	[ ] The segment registers patch
+	[ ] The far addressing patch
+[X] A general Overview of the ExAmour's architecture
+[X] The ExAmour's memory model
+[X] The ExAmour's scheduling model
+[X] The ExAmour's I/O model
+[ ] Security in the ExAmour's exokernel
+[ ] The ExAmour's driver model
+[ ] Dynamic library loading in ExAmour
+[ ] Shared memory in ExAmour
+[ ] An in depth in a microkernel based libOS on ExAmour
+[ ] An in depth in a virtualization server on ExAmour

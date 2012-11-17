@@ -1,0 +1,6 @@
+			** exAmour's improvments ideas **
+
+@ Presently I'm modifying the code of exAmour to use .def files
+  as it is the case in gcc. An idea came to my head. Why don't
+  improve the system to end up with a DSL to describe the exception/irq
+  upcalls and maybe more ?

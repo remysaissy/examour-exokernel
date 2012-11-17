@@ -1,0 +1,31 @@
+		** How to use the devel environment **
+
+
+Prerequisites:
+ - grub 0.95 or later
+ - mtools
+ - bximage
+ - bochs >= 2.2.6
+
+In order to use the devel environment you first need to set it up.
+This is done by using the following script:
+
+ #./install.sh
+
+A floppy drive will be created.
+
+Then to commit and try the result of your devels you just have to use
+copy files in the osdev/ directory and launch qemu.
+
+If you hack on the kernel, you can use:
+ #./launch.sh qemu
+to copy the freshly (or not) compiled kernel in the osdev directory
+and try to run it using qemu.
+
+bochs is also possible by issuing the following command:
+ #./launch.sh bochs
+ or
+ #./launch
+
+Enjoy.
+Remy Saissy, March 2nd 2006.
