@@ -1,0 +1,44 @@
+*** gcc-4.1.0/gcc/config/i386/i386.md	2006-02-07 02:49:05.000000000 +0800
+--- gcc-4.1.0-patch-far/gcc/config/i386/i386.md	2006-05-30 19:05:42.000000000 +0800
+***************
+*** 146,151 ****
+--- 146,154 ----
+     (UNSPEC_SP_TEST		101)
+     (UNSPEC_SP_TLS_SET		102)
+     (UNSPEC_SP_TLS_TEST		103)
++ 
++    ; segment registers support
++    (UNSPEC_SEGREG		104)
+    ])
+  
+  (define_constants
+***************
+*** 172,177 ****
+--- 175,185 ----
+     (FLAGS_REG			17)
+     (FPSR_REG			18)
+     (DIRFLAG_REG			19)
++    (SS_REG			52)
++    (DS_REG			53)
++    (ES_REG			54)
++    (FS_REG			55)
++    (GS_REG			56)
+    ])
+  
+  ;; Insns whose names begin with "x86_" are emitted by gen_FOO calls
+***************
+*** 1067,1072 ****
+--- 1075,1087 ----
+    ""
+    "ix86_expand_move (SImode, operands); DONE;")
+  
++ (define_insn "*movsi_12"
++   [(set (match_operand:SI 0 "nonimmediate_operand" "")
++ 	(mem:SI (plus:SI (unspec:SI [(reg:HI FS_REG)] UNSPEC_SEGREG) (match_operand:SI 1 "general_operand" ""))))]
++   ""
++   "mov{l}\t{%%fs:%1, %0|%0, DWORD PTR %%fs:%1}")
++   
++ 
+  ;; Push/pop instructions.  They are separate since autoinc/dec is not a
+  ;; general_operand.
+  ;;

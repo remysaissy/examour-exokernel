@@ -1,0 +1,6 @@
+cpu: count=1, ips=10000000
+
+
+
+boot: floppy
+floppya: image="build_tools/fd.img", status=inserted

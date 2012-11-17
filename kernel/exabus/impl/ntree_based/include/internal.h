@@ -1,0 +1,41 @@
+/*
+** This file is part of ExAmour
+
+** Copyright (C) Remy Saissy <remy.saissy@gmail.com>
+** examour is free software; you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation; either version 2 of the License, or
+** (at your option) any later version.
+
+** examour is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+#ifndef EXABUS_INTERNAL_H_
+#define EXABUS_INTERNAL_H_
+
+#include    <list.h>
+#include    <exaprocess.h>
+#include    <exabus.h>
+
+/**
+ * The call waiting queue.
+ */
+typedef struct  exabus_call_queue_s
+{
+  queue_t                    entries;
+  pid_t                      caller;
+  char                       *fullpath;
+  char                       *method;
+  exabus_argument_t          in;
+  exabus_method_callback_p   cb;
+
+}               exabus_call_queue_t;
+
+#endif /* EXABUS_INTERNAL_H_ */

@@ -1,0 +1,166 @@
+*** gcc-4.1.0/gcc/config/i386/i386.c	2006-01-11 21:32:44.000000000 +0800
+--- gcc-4.1.0-patch-far/gcc/config/i386/i386.c	2006-05-30 19:05:47.000000000 +0800
+*************** static int ix86_function_regparm (tree, 
+*** 897,902 ****
+--- 897,903 ----
+  const struct attribute_spec ix86_attribute_table[];
+  static bool ix86_function_ok_for_sibcall (tree, tree);
+  static tree ix86_handle_cconv_attribute (tree *, tree, tree, int, bool *);
++ static tree ix86_handle_pointer_attribute (tree *, tree, tree, int, bool *);
+  static int ix86_value_regno (enum machine_mode, tree, tree);
+  static bool contains_128bit_aligned_vector_p (tree);
+  static rtx ix86_struct_value_rtx (tree, int);
+*************** const struct attribute_spec ix86_attribu
+*** 1916,1921 ****
+--- 1917,1924 ----
+    /* Sseregparm attribute says we are using x86_64 calling conventions
+       for FP arguments.  */
+    { "sseregparm", 0, 0, false, true, true, ix86_handle_cconv_attribute },
++   /* Far attribute says to use a segment register with a given pointer. */
++   { "far", 1, 1, false, false, false, ix86_handle_pointer_attribute },
+  #if TARGET_DLLIMPORT_DECL_ATTRIBUTES
+    { "dllimport", 0, 0, false, false, false, handle_dll_attribute },
+    { "dllexport", 0, 0, false, false, false, handle_dll_attribute },
+*************** ix86_function_sseregparm (tree type, tre
+*** 2256,2261 ****
+--- 2259,2313 ----
+    return 0;
+  }
+  
++ /* Handle a "far" attribute; arguments as in
++    struct attribute_spec.handler.  */
++ static tree
++ ix86_handle_pointer_attribute (tree *node, tree name,
++ 			      tree args,
++ 			      int flags ATTRIBUTE_UNUSED, bool *no_add_attrs)
++ {
++ /*   if (TREE_CODE(*node) != POINTER_TYPE) */
++ /*     { */
++ /*       warning(OPT_Wattributes, "%qs attribute only applies to pointers.", */
++ /* 	      IDENTIFIER_POINTER(name)); */
++ /*       *no_add_attrs = true; */
++ /*       return NULL_TREE; */
++ /*     } */
++   
++   if (is_attribute_p("far", name))
++     {
++       tree cst;
++       
++       cst = TREE_VALUE(args);
++       if (TREE_CODE(cst) != STRING_CST)
++ 	{
++ 	  warning(OPT_Wattributes, "%qs attribute requires a string constant argument",
++ 		  IDENTIFIER_POINTER(name));
++ 	  *no_add_attrs = true;
++ 	}
++       else
++ 	{
++ 	  if (strcmp(TREE_STRING_POINTER(cst), "ss") &&
++ 	      strcmp(TREE_STRING_POINTER(cst), "ds") &&
++ 	      strcmp(TREE_STRING_POINTER(cst), "es") &&
++ 	      strcmp(TREE_STRING_POINTER(cst), "fs") &&
++ 	      strcmp(TREE_STRING_POINTER(cst), "gs"))
++ 	    {
++ 	      warning (OPT_Wattributes, "argument to %qs attribute is not a valid segment register name",
++ 		       IDENTIFIER_POINTER(name));
++ 	      *no_add_attrs = true;
++ 	    }
++ 	}
++     }
++   else
++     {
++       warning(OPT_Wattributes, "bad attribute type %qs",
++ 	      IDENTIFIER_POINTER(name));
++       *no_add_attrs = true;
++     }  
++   return NULL_TREE;
++ }
++ 
+  /* Return true if EAX is live at the start of the function.  Used by
+     ix86_expand_prologue to determine if we need special help before
+     calling allocate_stack_worker.  */
+*************** ix86_decompose_address (rtx addr, struct
+*** 5285,5291 ****
+  	          && seg == SEG_DEFAULT)
+  		seg = TARGET_64BIT ? SEG_FS : SEG_GS;
+  	      else
+! 		return 0;
+  	      break;
+  
+  	    case REG:
+--- 5337,5367 ----
+  	          && seg == SEG_DEFAULT)
+  		seg = TARGET_64BIT ? SEG_FS : SEG_GS;
+  	      else
+! 		{
+! 		  warning(OPT_Wattributes, "hehe: %s %s", XSTR(op, 1), XSTR(op, 2));
+! 		  if (!strcmp(XSTR(op, 1), "ds"))
+! 		    {
+! 		      seg = SEG_DS;
+! 		    }
+! 		  else if (!strcmp(XSTR(op, 1), "es"))
+! 		    {
+! 		      seg = SEG_ES;
+! 		    }
+! 		  else if (!strcmp(XSTR(op, 1), "fs"))
+! 		    {
+! 		      seg = SEG_FS;
+! 		    }
+! 		  else if (!strcmp(XSTR(op, 1), "gs"))
+! 		    {
+! 		      seg = SEG_GS;
+! 		    }
+! 		  else if (!strcmp(XSTR(op, 1), "ss"))
+! 		    {
+! 		      seg = SEG_SS;
+! 		    }
+! 		  else
+! 		    return 0;
+! 		}
+  	      break;
+  
+  	    case REG:
+*************** print_operand_address (FILE *file, rtx a
+*** 7454,7464 ****
+      {
+      case SEG_DEFAULT:
+        break;
+      case SEG_FS:
+      case SEG_GS:
+        if (USER_LABEL_PREFIX[0] == 0)
+  	putc ('%', file);
+!       fputs ((parts.seg == SEG_FS ? "fs:" : "gs:"), file);
+        break;
+      default:
+        gcc_unreachable ();
+--- 7530,7559 ----
+      {
+      case SEG_DEFAULT:
+        break;
++     case SEG_SS:
++       if (USER_LABEL_PREFIX[0] == 0)
++ 	putc ('%', file);
++       fputs ("ss:", file);
++       break;
++     case SEG_DS:
++       if (USER_LABEL_PREFIX[0] == 0)
++ 	putc ('%', file);
++       fputs ("ds:", file);
++       break;
++     case SEG_ES:
++       if (USER_LABEL_PREFIX[0] == 0)
++ 	putc ('%', file);
++       fputs ("es:", file);
++       break;
+      case SEG_FS:
++       if (USER_LABEL_PREFIX[0] == 0)
++ 	putc ('%', file);
++       fputs ("fs:", file);
++       break;
+      case SEG_GS:
+        if (USER_LABEL_PREFIX[0] == 0)
+  	putc ('%', file);
+!       fputs ("gs:", file);
+        break;
+      default:
+        gcc_unreachable ();

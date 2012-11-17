@@ -1,0 +1,12 @@
+How to build:
+After the eclipse workspace has been built, go into this directory and in the subdirectory build_tools, executes install.sh.
+once it has been built, execute launch.sh to test it with qemu.
+
+IMPORTANT:
+	- presently, only exaboot is set in the qemu image.
+To add other components to the image, edit the grub/menu.list file in build_tools/bootfs/ and add the mcopy statement in launch.sh following the way it is performed for exaboot.
+The grub statement is a /module <module>.
+
+-- 
+Remy
+March 5th, 2008

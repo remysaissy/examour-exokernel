@@ -1,0 +1,157 @@
+*** gcc-4.1.0/./gcc/config/i386/i386.c	2006-09-16 15:25:39.000000000 +0200
+--- gcc-4.1.0-patch-segreg/./gcc/config/i386/i386.c	2006-09-28 13:38:36.000000000 +0200
+*************** enum reg_class const regclass_map[FIRST_
+*** 623,628 ****
+--- 623,630 ----
+    NON_Q_REGS, NON_Q_REGS, NON_Q_REGS, NON_Q_REGS,
+    SSE_REGS, SSE_REGS, SSE_REGS, SSE_REGS, SSE_REGS, SSE_REGS,
+    SSE_REGS, SSE_REGS,
++   CODE_SEG_REGS, STACK_SEG_REGS, DATA_SEG_REGS, DATA_SEG_REGS,
++   ALT_DATA_SEG_REGS, ALT_DATA_SEG_REGS,
+  };
+  
+  /* The "default" register map used in 32bit mode.  */
+*************** int const dbx_register_map[FIRST_PSEUDO_
+*** 636,641 ****
+--- 638,644 ----
+    29, 30, 31, 32, 33, 34, 35, 36,       /* MMX */
+    -1, -1, -1, -1, -1, -1, -1, -1,	/* extended integer registers */
+    -1, -1, -1, -1, -1, -1, -1, -1,	/* extended SSE registers */
++   -1, -1, -1, -1, -1, -1, /* cs,ds,... mega muf */
+  };
+  
+  static int const x86_64_int_parameter_registers[6] =
+*************** int const dbx64_register_map[FIRST_PSEUD
+*** 659,664 ****
+--- 662,668 ----
+    41, 42, 43, 44, 45, 46, 47, 48,       /* MMX */
+    8,9,10,11,12,13,14,15,		/* extended integer registers */
+    25, 26, 27, 28, 29, 30, 31, 32,	/* extended SSE registers */
++   -1, -1, -1, -1, -1, -1, /* cs,ds,... */
+  };
+  
+  /* Define the register numbers to be used in Dwarf debugging information.
+*************** int const svr4_dbx_register_map[FIRST_PS
+*** 724,729 ****
+--- 728,734 ----
+    29, 30, 31, 32, 33, 34, 35, 36,	/* MMX registers */
+    -1, -1, -1, -1, -1, -1, -1, -1,	/* extended integer registers */
+    -1, -1, -1, -1, -1, -1, -1, -1,	/* extended SSE registers */
++   -1, -1, -1, -1, -1, -1,/* cs,ds,...  */
+  };
+  
+  /* Test and compare insns in i386.md store the information needed to
+*************** ix86_expand_move (enum machine_mode mode
+*** 8293,8298 ****
+--- 8298,8342 ----
+    op0 = operands[0];
+    op1 = operands[1];
+  
++   /* register unsigned short a __asm__("es"); */
++ 									
++ /* MEGA MUFF */
++ /*
++   warning(0, "CODE_LABEL=%d, JUMP_INSN=%d, CALL_INSN=%d, INSN=%d NOTE=%d, BARRIER=%d, ADDR_VEC=%d, ADDR_DIFF_VEC=%d", CODE_LABEL, JUMP_INSN, CALL_INSN, INSN, NOTE, BARRIER, ADDR_VEC, ADDR_DIFF_VEC);
++ */
++   warning(0, "gcc/config/i386/i386.c:ix86_expand_move ------ START ---- op0_code : %d  op1_code %d\n REG=%d et MEM=%d CONST_INT=%d |||| op0 value: %d op1 value %d",
++ 	  GET_CODE (op0), GET_CODE (op1), REG, MEM, CONST_INT, REGNO(op0), REGNO(op1));
++ 
++   if (SEG_REG_P(op0)
++       && (GET_CODE (op1) == MEM || GET_CODE (op1) == CONST_INT))
++     {
++       op1 = copy_to_mode_reg (mode, op1); /* here there is a call of ix86_expand_move */
++ /*       op1 = force_reg(HImode, op1); /\* here there is a call of ix86_expand_move *\/ */
++       warning(0, "gcc/config/i386/i386.c:ix86_expand_move ----- HAVE TO CHAGE --- op0: %d op1 %d",
++ 	      REGNO(op0), REGNO(op1));
++       //      return "mov{w}\t{%1, %0|%0, %1}";
++     }
++   warning(0, "gcc/config/i386/i386.c:ix86_expand_move --- CHECK DONE --- op0: %d op1 %d",
++ 	  REGNO(op0), REGNO(op1));
++ 
++   /* tibo */
++   if (SEG_REG_P(op0))
++     {
++       warning(0, "gcc/config/i386/i386.md:ix86_expand_move ---  --- op0_code : %d  op1_code %d\n REG=%d et MEM=%d CONST_INT=%d |||| op0 value: %d op1 value %d",
++ 	    GET_CODE (op0), GET_CODE (op1), REG, MEM, CONST_INT, REGNO(op0), REGNO(op1));
++ /*       emit_move_insn (op0, op1); */
++ 
++ /*   emit_insn (gen_rtx_SET (VOIDmode, op0, op1)); */
++ /*   warning(0, "gcc/config/i386/i386.c:ix86_expand_move ------ END ---- op0_code : %d  op1_code %d\n REG=%d et MEM=%d CONST_INT=%d |||| op0 value: %d op1 value %d", */
++ /* 	  GET_CODE (op0), GET_CODE (op1), REG, MEM, CONST_INT, REGNO(op0), REGNO(op1)); */
++ 
++ /* 	  return "mov{w}\t{%1, %0|%0, %1}"; */
++ emit_insn (gen_rtx_SET (VOIDmode, op0, op1));
++       /* we can exit now as nothing else is executed */
++       return;
++ 
++     }
++ 									
+    if (GET_CODE (op1) == SYMBOL_REF)
+      {
+        model = SYMBOL_REF_TLS_MODEL (op1);
+*************** ix86_expand_move (enum machine_mode mode
+*** 8320,8328 ****
+  	    return;
+  	}
+      }
+- 
+    if (flag_pic && mode == Pmode && symbolic_operand (op1, Pmode))
+      {
+  #if TARGET_MACHO
+        if (MACHOPIC_PURE)
+  	{
+--- 8364,8372 ----
+  	    return;
+  	}
+      }
+    if (flag_pic && mode == Pmode && symbolic_operand (op1, Pmode))
+      {
++ 
+  #if TARGET_MACHO
+        if (MACHOPIC_PURE)
+  	{
+*************** ix86_expand_move (enum machine_mode mode
+*** 8355,8361 ****
+--- 8399,8407 ----
+  
+        if (push_operand (op0, mode)
+  	  && ! general_no_elim_operand (op1, mode))
++ 	{warning(0, " WARN 2");
+  	op1 = copy_to_mode_reg (mode, op1);
++ 	}
+  
+        /* Force large constants in 64bit compilation into register
+  	 to get them CSEed.  */
+*************** ix86_expand_move (enum machine_mode mode
+*** 8387,8393 ****
+  	    }
+  	}
+      }
+- 
+    emit_insn (gen_rtx_SET (VOIDmode, op0, op1));
+  }
+  
+--- 8433,8438 ----
+*************** ix86_hard_regno_mode_ok (int regno, enum
+*** 16091,16096 ****
+--- 16136,16143 ----
+        return (VALID_MMX_REG_MODE (mode)
+  	      || VALID_MMX_REG_MODE_3DNOW (mode));
+      }
++   if (SEG_REGNO_P(regno))
++     return (VALID_SEG_REG_MODE_P(mode));
+  
+    if (mode == QImode)
+      {
+*************** x86_order_regs_for_local_alloc (void)
+*** 16673,16678 ****
+--- 16720,16728 ----
+     for (i = FIRST_MMX_REG; i <= LAST_MMX_REG; i++)
+       reg_alloc_order [pos++] = i;
+  
++    for (i = CODE_SEG_REGNUM; i <= LAST_ALT_DATA_SEG_REG; i++)
++        reg_alloc_order [pos++] = i; // mega muff
++ 
+     /* Initialize the rest of array as we do not allocate some registers
+        at all.  */
+     while (pos < FIRST_PSEUDO_REGISTER)
