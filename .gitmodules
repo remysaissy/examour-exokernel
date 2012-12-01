@@ -1,0 +1,3 @@
+[submodule "libs/libslds"]
+	path = libs/libslds
+	url = git://github.com/remysaissy/libslds.git
