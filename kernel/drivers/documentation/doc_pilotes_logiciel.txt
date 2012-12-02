@@ -1,0 +1,70 @@
+			Ce document est relatif :
+		     aux pilotes logiciel d'ExAmour
+
+
+SOMMAIRE
+--------
+
+1) Caracteristiques
+
+2) Methode de classement/differenciation
+
+3) Utilisation des pilotes logiciel
+
+
+
+1) CARACTERISTIQUES
+-------------------
+
+    Les pilotes logiciel sont definis par les caracteristiques suivantes :
+- ils peuvent etre embarque/assimile a une librairie, chargee ou non au
+  lancement du programme (si ce n'est pas le cas le programme doit etre
+  en mesure de la charger).
+- ils ne necessitent pas d'acces DIRECT aux fonctionnalites materielles
+  (ex : lecture sur les disques, envois sur la carte reseau, ...)
+
+    La liste (non exaustive) qui suit represente des types de pilote
+classes dans cette categorie :
+- protocoles reseau (TCP, ICMP, ...),
+- systemes de fichiers (NFTS, FAT, ...),
+- gestion de l'affichage (des fenetres, des caracteres, ...)
+
+
+
+
+2) METHODE DE CLASSEMENT/DIFFERENCIATION
+----------------------------------------
+
+La liste de correspondance :
+       type de pilote/valeur du champ d'identification
+est fournie par le fichier swdrv.h situee dans les sources du noyau.
+
+    La listes des pilotes logiciel charges est cree au fur et a mesure
+de l'execution et du chargement de ceux-ci par le noyau.
+
+
+
+3) UTILISATION DES PILOTES LOGICIEL
+-----------------------------------
+
+Note: on nommera ici EA l'Entitee Appelante
+
+    Lorsque l'EA souhaite utiliser un pilote logiciel, celle-ci
+recherche dans la liste des pilotes logiciels charge si l'un d'eux
+correspond a ses besoins.
+    Si aucun correspond l'EA fournit une fonction recuperation,
+celle-ci contient les informations du pilote logiciel dont elle
+souhaite le chargement.
+Ces informations sont en general l'adresse de chargement sur un
+peripherique donne.
+    Cette fonction est executee par le noyau.
+    Le pilote est alors charge et un droit d'acces est donne a l'EA.
+
+Le noyau va egalement stoquer la signature du pilote dans la liste des
+pilotes charges celui-ci pourra donc etre utilise par d'autres entites
+par la suite.
+
+Une fois le pilote charge dans l'espace accessible par l'EA, celle-ci
+fait appel directement aux fonctions du pilote.
+
+

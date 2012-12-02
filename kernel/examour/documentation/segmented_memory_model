@@ -1,0 +1,35 @@
+			** exAmour's segmented memory model **
+
+exAmour is a kernel which largely relies on the userspace env to
+manage the resources.
+The memory segments are included and therefore the present document
+only expose the forwared kernel information of the segmented model.
+
+It is important to note that general and readonly kernel informations
+are GDT segments (please see gdt_layout for further informations)
+while per env informations and write access informations are in the
+LDT of each env.
+
+@ The LDT:
+Each env in exAmour has to allocate an LDT, even if the env do not
+intend to use segmented memory model.
+An LDT is created during _init_memory_map (see env_manager and
+first_env_launching) through the sys_ldt_create() syscall.
+
+By default, the two first entries of the ldt are statically allocated by
+the kernel.
+ - LDT[0] is the ldt itself.
+ - LDT[1] is the kernel part of the running environnement.
+   It is actually the env's kernel stack which contains all the
+   env's kernel mapping.
+Both are read only data mapping.
+
+@ The GDT
+Data common to everybody in the system are mapped in the gdt at
+GDT_SEG_UEXPORTED index.
+Those data are read only mapping and provides every env general purpose
+informations about the kernel state and stat, the hardware, the drivers, ...
+But no informations about the running envs since our privacy contract is
+very strict on this point.
+
+/* TODO: layout of the UEXPORTED mapping. */

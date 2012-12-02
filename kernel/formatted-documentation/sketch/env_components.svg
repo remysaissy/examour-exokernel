@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="210mm"
+   height="297mm"
+   id="svg3813">
+  <defs
+     id="defs3815" />
+  <g
+     id="layer1">
+    <text
+       x="174.28571"
+       y="58.933613"
+       style="font-size:22px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3821"
+       xml:space="preserve"><tspan
+         x="174.28571"
+         y="58.933613"
+         id="tspan3823">ExAmour's environement components</tspan></text>
+    <g
+       transform="translate(-1.42857,-5.99999)"
+       id="g3843">
+      <rect
+         width="234.18002"
+         height="168.46573"
+         ry="34.264217"
+         x="131.48141"
+         y="180.98645"
+         style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+         id="rect3825" />
+      <text
+         x="151.42857"
+         y="247.79076"
+         style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text3827"
+         xml:space="preserve"><tspan
+           x="151.42857"
+           y="247.79076"
+           id="tspan3829">Cpu timeslice</tspan><tspan
+           x="151.42857"
+           y="282.79077"
+           id="tspan3831">allocator</tspan></text>
+    </g>
+    <g
+       transform="translate(263.8571,-5.99999)"
+       id="g3875">
+      <g
+         id="g3921">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3877" />
+        <text
+           x="157.42857"
+           y="265.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3879"
+           xml:space="preserve"><tspan
+             x="157.42857"
+             y="265.79077"
+             id="tspan3883">Env allocator</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(263.8571,193.5714)"
+       id="g3885">
+      <g
+         id="g3911">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3887" />
+        <text
+           x="207.42857"
+           y="265.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3889"
+           xml:space="preserve"><tspan
+             x="207.42857"
+             y="265.79077"
+             id="tspan3893">Timer</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(-1.42857,193.5714)"
+       id="g3895">
+      <g
+         id="g3916">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3897" />
+        <text
+           x="177.42857"
+           y="267.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3899"
+           xml:space="preserve"><tspan
+             x="177.42857"
+             y="267.79077"
+             id="tspan3903">Scheduler</tspan></text>
+      </g>
+    </g>
+    <text
+       x="240"
+       y="135.21933"
+       style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3926"
+       xml:space="preserve"><tspan
+         x="240"
+         y="135.21933"
+         id="tspan3928">Components view</tspan></text>
+    <text
+       x="200.57144"
+       y="603.79077"
+       style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3930"
+       xml:space="preserve"><tspan
+         x="200.57144"
+         y="603.79077"
+         id="tspan3932">Components interactions</tspan></text>
+    <g
+       transform="translate(-33.78573,681.3571)"
+       id="g3934">
+      <rect
+         width="234.18002"
+         height="168.46573"
+         ry="34.264217"
+         x="131.48141"
+         y="180.98645"
+         style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+         id="rect3936" />
+      <text
+         x="151.42857"
+         y="247.79076"
+         style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text3938"
+         xml:space="preserve"><tspan
+           x="151.42857"
+           y="247.79076"
+           id="tspan3940">Cpu timeslice</tspan><tspan
+           x="151.42857"
+           y="282.79077"
+           id="tspan3942">allocator</tspan></text>
+    </g>
+    <g
+       transform="translate(301.5,681.3571)"
+       id="g3944">
+      <g
+         id="g3946">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3948" />
+        <text
+           x="157.42857"
+           y="265.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3950"
+           xml:space="preserve"><tspan
+             x="157.42857"
+             y="265.79077"
+             id="tspan3952">Env allocator</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(301.5,950.9285)"
+       id="g3954">
+      <g
+         id="g3956">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3958" />
+        <text
+           x="207.42857"
+           y="265.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3960"
+           xml:space="preserve"><tspan
+             x="207.42857"
+             y="265.79077"
+             id="tspan3962">Timer</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(-33.78573,950.9285)"
+       id="g3964">
+      <g
+         id="g3966">
+        <rect
+           width="234.18002"
+           height="168.46573"
+           ry="34.264217"
+           x="131.48141"
+           y="180.98645"
+           style="fill:none;stroke:black;stroke-width:1.10569501;stroke-opacity:1"
+           id="rect3968" />
+        <text
+           x="177.42857"
+           y="267.79077"
+           style="font-size:28px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+           id="text3970"
+           xml:space="preserve"><tspan
+             x="177.42857"
+             y="267.79077"
+             id="tspan3972">Scheduler</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(1.714,208.5715)"
+       id="g3800">
+      <path
+         d="M 737.14288 470.93362 A 328.57144 27.142857 0 1 1  80,470.93362 A 328.57144 27.142857 0 1 1  737.14288 470.93362 z"
+         transform="matrix(1.082049,0,0,1.730059,-60.66548,-323.8094)"
+         style="fill:none;stroke:black;stroke-opacity:1"
+         id="path3794" />
+      <text
+         x="309.14285"
+         y="495.21933"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         id="text3796"
+         xml:space="preserve"><tspan
+           x="309.14285"
+           y="495.21933"
+           style="font-size:20px"
+           id="tspan3798">Environments</tspan></text>
+    </g>
+    <path
+       d="M 492.78774,861.7907 L 415.33173,747.14791"
+       inkscape:connection-start="#g3944"
+       inkscape:connection-end="#g3800"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3978" />
+    <path
+       d="M 272.55961,861.7907 L 350.67848,747.14791"
+       inkscape:connection-start="#g3934"
+       inkscape:connection-end="#g3800"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3980" />
+    <path
+       d="M 432.42857,946.57641 L 332.42856,946.57641"
+       inkscape:connection-start="#g3944"
+       inkscape:connection-end="#g3934"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3982" />
+    <path
+       d="M 214.7857,1131.3621 L 214.7857,1031.3621"
+       inkscape:connection-start="#g3964"
+       inkscape:connection-end="#g3934"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3984" />
+    <path
+       d="M 432.42857,1216.1478 L 332.42856,1216.1478"
+       inkscape:connection-start="#g3954"
+       inkscape:connection-end="#g3964"
+       style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3986" />
+  </g>
+</svg>

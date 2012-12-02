@@ -1,0 +1,61 @@
+/*
+** This file is part of exAmour
+
+** Copyright (C) Remy Saissy <remy.saissy@epitech.net>
+** exAmour is free software; you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation; either version 2 of the License, or
+** (at your option) any later version.
+
+** exAmour is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+/* This file contains the list of the exAmour syscalls. */
+/* If you have added a new syscall function, it is here to register it. */
+
+/**
+ * \def		SYSCALL_ENTRY(ret_type, syscall_name, n_params)
+ * \param ret_type	Indicates the return type of the syscall.
+ *			void if the syscall has no return value.
+ * \param syscall_name	Name of the function which implements the syscall.
+ * \param n_params	Number of parameters of the syscall function.
+ * \brief		Defines a syscall.
+ */
+
+
+/* Event management. */
+
+/**
+ * Grant a capability to an environment.
+ * \see	io.h
+ */
+SYSCALL_ENTRY(bool, io_grant, 2)
+
+/**
+ * Revoke a granted capability of an environment.
+ * \see	io.h
+ */
+SYSCALL_ENTRY(bool, io_revoke, 1)
+
+/**
+ * Register an event callback.
+ * \see event.h
+ */
+SYSCALL_ENTRY(bool, event_register, 4)
+
+/**
+ * Unregister an event callback.
+ * \see event.h
+ */
+SYSCALL_ENTRY(bool, event_unregister, 3)
+
+SYSCALL_ENTRY(bool, event_forge, 2)
+
+SYSCALL_ENTRY(bool, event_throw, 2)
