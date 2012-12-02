@@ -1,0 +1,5 @@
+add_subdirectory(fs)
+add_subdirectory(input)
+add_subdirectory(mm)
+add_subdirectory(rt)
+add_subdirectory(video)

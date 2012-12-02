@@ -1,3 +1,3 @@
-[submodule "libs/libslds"]
-	path = libs/libslds
+[submodule "kernel/libs/libslds"]
+	path = kernel/libs/libslds
 	url = git://github.com/remysaissy/libslds.git
