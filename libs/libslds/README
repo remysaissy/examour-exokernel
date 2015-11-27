@@ -1,0 +1,14 @@
+Libslds stands for Library for Storage and Lookup Data Structures.
+
+It started from the observation that no library exists in C that is really portable and that embeds common algorithms for data structure manipulation.
+
+The libslds was built (and is still building!) with the insight of keeping things as simple as possible and to keep the library focused on algorithms.
+Therefore, memory allocation calls are prohibited from the library as well as any other calls related to a library or another. Just because the conviction
+is that algorithms do not need it and that it is a good way to keep things simple.
+
+In order to achieve a good quality level, the library is completely unit tested. Any functionality has its own tests battery. Any bug is first reproduced
+through a test and then fixed.
+ 
+The only thing the library needs by now is motivated developers to improve it!
+
+-- Rémy SAISSY, October, 15th, 2008.

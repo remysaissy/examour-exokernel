@@ -1,0 +1,1 @@
+add_library(event_asm OBJECT 8259a.S exception.S syscall.S)
