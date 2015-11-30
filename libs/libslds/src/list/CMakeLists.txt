@@ -1,1 +1,0 @@
-add_library(list OBJECT clist.c dlist.c slist.c)

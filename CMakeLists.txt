@@ -1,17 +1,19 @@
 cmake_minimum_required(VERSION 3.2) 
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-message("EXECUTABLE_OUTPUT_PATH: " ${EXECUTABLE_OUTPUT_PATH} " CMAKE_BINARY_DIR" ${CMAKE_BINARY_DIR} " CMAKE_CURRENT_BINARY_DIR: " ${CMAKE_CURRENT_BINARY_DIR} " PROJECT_BINARY_DIR: " ${PROJECT_BINARY_DIR})
+#enable_testing() # needed on top-level CMakeLists.txt
 
-# if(${CMAKE_BINARY_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
-# message(FATAL_ERROR "source and build directories are the same. Please create a separate build directory and execute cmake ../CMakeLists.txt from there.")
-# endif()
+# Target doc definition
+# The challenge here is that the sub projects must all define a custom target but with different names to avoid
+# conflicts. We also want to be able to issue "make doc" from the top dir while being able to issue "make doc"
+# in the subdirs *when* we compile only a subproject.
+# We define as well a function AddDocTarget in cmake/DoxygenTarget.cmake
+#add_custom_target(doc) # DEPENDS docProjA docProjB) Note: with CMake 3.X the DEPENDS would work
+#ADD_DEPENDENCIES(doc kernel slds klibc)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/bin)
-
-#add_subdirectory(libs)
+add_subdirectory(libs/libslds)
+#add_subdirectory(libs/klibc)
 #add_subdirectory(kernel)
 #add_subdirectory(drivers)
 #add_subdirectory(applications)
