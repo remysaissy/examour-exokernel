@@ -26,3 +26,4 @@ install(TARGETS ${PROJECT_NAME}
   PUBLIC_HEADER DESTINATION include COMPONENT devel   # headers (note the different component -> different package)
 #  FRAMEWORK DESTINATION bin COMPONENT libs # for mac
 )
+

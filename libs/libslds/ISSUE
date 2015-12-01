@@ -1,6 +1,0 @@
-		** Known issues and their workaround **
-		
-Presently, there is one known issue due to GCC optimization levels.
-
-Starting from -O2, the strict aliases is implied with GCC. Therefore, you can experience warnings with libslds.
-This is not a problem, to solve it, simply add -Wno-strict-aliasing to the compilation line of your project and it works.

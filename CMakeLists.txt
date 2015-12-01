@@ -12,8 +12,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 #add_custom_target(doc) # DEPENDS docProjA docProjB) Note: with CMake 3.X the DEPENDS would work
 #ADD_DEPENDENCIES(doc kernel slds klibc)
 
+add_subdirectory(libs/libc)
 add_subdirectory(libs/libslds)
-#add_subdirectory(libs/klibc)
 #add_subdirectory(kernel)
 #add_subdirectory(drivers)
 #add_subdirectory(applications)

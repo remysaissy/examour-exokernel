@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.2) 
-project(slds)
+project(c)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/libs/libc/cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake) # main (top) cmake dir
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake) # project specific cmake dir
+
 
 # CMake useful variables
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
@@ -32,10 +33,6 @@ if(GIT_FOUND)
   set (VCS_REVISION ${GIT_SHA1})
 endif()
 
-set(c_INCLUDE_DIRS
-  "${CMAKE_SOURCE_DIR}/libs/libc/include"
-  "${CMAKE_BINARY_DIR}/libs/libc/include")  
-
 # This sets the include directory for the reference project. This is the -I flag in gcc.
 # All the includes should be in this variable To add new directories to the include path,
 # just add them in this list (after a space), or add an include_directories statement in a
@@ -43,8 +40,7 @@ set(c_INCLUDE_DIRS
 
 include_directories(
   ${PROJECT_SOURCE_DIR}/include
-  ${PROJECT_BINARY_DIR}/include   # add the binary tree to the search path so that we will find Version.h
-  ${c_INCLUDE_DIRS}
+  ${PROJECT_BINARY_DIR}/include   # add the binary tree to the search path so that we will find version.h
   )
 
 #enable_testing()
