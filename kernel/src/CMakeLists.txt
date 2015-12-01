@@ -2,8 +2,8 @@ file(GLOB_RECURSE APP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/../include/examour/*.
 set(VERSION_HEADERS "${CMAKE_CURRENT_BINARY_DIR}/../include/examour/version.h")
 
 file(GLOB_RECURSE APP_SOURCES
-  "${CMAKE_CURRENT_SOURCE_DIR}/../src/arch/i386/*.c"
-  "${CMAKE_CURRENT_SOURCE_DIR}/../src/arch/i386/*.S"
+  "${CMAKE_CURRENT_SOURCE_DIR}/arch/i386/*.c"
+  "${CMAKE_CURRENT_SOURCE_DIR}/arch/i386/*.S"
   )
 
 enable_language(ASM)
@@ -13,8 +13,7 @@ set(CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS} ${ASM_OPTIONS}")
 
 # Define the application
 add_executable(${PROJECT_NAME} ${APP_SOURCES})
-set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
-# TODO: integrate .lds
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32 -T ${CMAKE_CURRENT_SOURCE_DIR}/arch/i386/mm/kernel.lds")
 
 target_link_libraries(${PROJECT_NAME} ${c_LIB} ${slds_LIB})
 
