@@ -14,6 +14,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 add_subdirectory(libs/libc)
 add_subdirectory(libs/libslds)
-#add_subdirectory(kernel)
+add_subdirectory(kernel)
 #add_subdirectory(drivers)
 #add_subdirectory(applications)

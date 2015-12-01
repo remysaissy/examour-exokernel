@@ -17,7 +17,7 @@
 #define @PROJECT_NAME@_VCS_REVISION "@VCS_REVISION@"
 
  /* True if the current version is newer than the given one. */
-#define HELLO_VERSION_GT(MAJOR, MINOR, PATCH) \
+#define @PROJECT_NAME@_VERSION_GT(MAJOR, MINOR, PATCH) \
   ((@PROJECT_NAME@_VERSION_MAJOR > MAJOR) ||           \
    (@PROJECT_NAME@_VERSION_MAJOR ==                    \
     MAJOR&&(@PROJECT_NAME@_VERSION_MINOR > MINOR || (@PROJECT_NAME@_VERSION_MINOR == MINOR&& @PROJECT_NAME@_VERSION_PATCH > PATCH))))

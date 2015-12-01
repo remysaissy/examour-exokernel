@@ -10,6 +10,9 @@
 /* The current patch level. */
 #define @PROJECT_NAME@_VERSION_PATCH @VERSION_PATCH@
 
+/* full version string. */
+#define @PROJECT_NAME@_VERSION_STRING "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@"
+
 /* The current git revision. */
 #define @PROJECT_NAME@_VCS_REVISION "@VCS_REVISION@"
 
@@ -36,11 +39,6 @@
   ((@PROJECT_NAME@_VERSION_MAJOR < MAJOR) ||           \
    (@PROJECT_NAME@_VERSION_MAJOR ==                    \
     MAJOR&&(@PROJECT_NAME@_VERSION_MINOR < MINOR || (@PROJECT_NAME@_VERSION_MINOR == MINOR&& @PROJECT_NAME@_VERSION_PATCH <= PATCH))))
-
-
-/* Get the version string. */
-#define @PROJECT_NAME@_VERSION \
-  @PROJECT_NAME@_VERSION_MAJOR ## "." ## @PROJECT_NAME@_VERSION_MINOR ## "." ## @PROJECT_NAME@_VERSION_PATCH
 
 #endif /* @PROJECT_NAME@_VERSION_H */
 

@@ -1,1 +1,0 @@
-add_library(env_asm OBJECT upcall.S)

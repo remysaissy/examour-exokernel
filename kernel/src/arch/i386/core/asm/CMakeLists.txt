@@ -1,1 +1,0 @@
-add_library(core_asm OBJECT bootstrap.S)

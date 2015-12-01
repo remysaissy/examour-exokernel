@@ -146,9 +146,7 @@ void		kmain(unsigned long magic, uint32_t mbi_addr)
   sched_init();
 
   /* begin running. */
-  message(EXAMOUR_STRING VERSION_EXTRA " "
-	  VERSION_MAJOR "." VERSION_MINOR VERSION_RELEASE
-	  " (" BUILD_TIMESTAMP ")\n");
+  message(examour_VERSION_STRING " (" examour_VCS_REVISION ")\n");
 
   /* print_mbinfo(); */
   /* launch the init environment. */
