@@ -1,24 +1,25 @@
-/* This is free and unencumbered software released into the public domain. */
-
 #ifndef _STDARG_H
 #define _STDARG_H
 
-/**
- * @file
- *
- * <stdarg.h> - Variable arguments.
- *
- * @see http://libc11.org/stdarg/
- */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-typedef __builtin_va_list va_list;
+#define __NEED_va_list
 
-#define va_start(ap, param) __builtin_va_start((ap), (param))
+#include <bits/alltypes.h>
 
-#define va_arg(ap, type)    __builtin_va_arg((ap), (type))
+#if __GNUC__ >= 3
+#define va_start(v,l)   __builtin_va_start(v,l)
+#define va_end(v)       __builtin_va_end(v)
+#define va_arg(v,l)     __builtin_va_arg(v,l)
+#define va_copy(d,s)    __builtin_va_copy(d,s)
+#else
+#include <bits/stdarg.h>
+#endif
 
-#define va_end(ap)          __builtin_va_end((ap))
+#ifdef __cplusplus
+}
+#endif
 
-#define va_copy(dest, src)  __builtin_va_copy((dest), (src))
-
-#endif /* _STDARG_H */
+#endif

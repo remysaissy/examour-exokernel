@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.2)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+# Define common flags to all projects
+set(CMAKE_C_FLAGS "-std=c99 -nostdinc -nostdlib -ffreestanding")
+
 #enable_testing() # needed on top-level CMakeLists.txt
 
 # Target doc definition

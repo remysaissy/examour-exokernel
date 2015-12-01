@@ -6,11 +6,14 @@ file(GLOB_RECURSE APP_SOURCES
   "${CMAKE_CURRENT_SOURCE_DIR}/../src/arch/i386/*.S"
   )
 
-# Define specific flags for the library
-set(CMAKE_C_FLAGS "-nostdinc -nostdlib -ffreestanding")
+enable_language(ASM)
+set(CMAKE_ASM_SOURCE_FILE_EXTENSIONS "s;S")
+set(ASM_OPTIONS "-x assembler-with-cpp -D__ASM__")
+set(CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS} ${ASM_OPTIONS}")
 
 # Define the application
 add_executable(${PROJECT_NAME} ${APP_SOURCES})
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
 # TODO: integrate .lds
 
 target_link_libraries(${PROJECT_NAME} ${c_LIB} ${slds_LIB})

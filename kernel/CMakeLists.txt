@@ -35,6 +35,7 @@ endif()
 
 set(c_INCLUDE_DIRS
   "${CMAKE_SOURCE_DIR}/libs/libc/include"
+  "${CMAKE_SOURCE_DIR}/libs/libc/include/arch/i386"
   "${CMAKE_BINARY_DIR}/libs/libc/include")
 
 set(c_LIB "${CMAKE_BINARY_DIR}/lib/libc.a")
