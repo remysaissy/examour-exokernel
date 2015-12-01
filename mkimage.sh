@@ -30,11 +30,11 @@ mount /dev/mapper/loop0p1 build/tmp/p1
 # Copy in the files from the staging directory
 #cp -r build/img/* build/tmp/p1
 mkdir -p build/tmp/p1/boot/grub
-cp scripts/build_tools/bootfs/boot/grub/menu.lst build/tmp/p1/boot/grub/grub.cfg
-cp build/bin/examour build/tmp/p1/boot/examour
+cp grub.cfg build/tmp/p1/boot/grub/grub.cfg
+cp build/bin/examour build/tmp/p1/boot/kernel.bin
 
 # Create a device map for grub
-echo &quot;(hd0) /dev/loop0&quot; &gt; build/tmp/device.map
+echo "(hd0) /dev/loop0" > `pwd`/build/tmp/p1/boot/grub/device.map
 
 # Use grub2-install to actually install Grub. The options are:
 #   * No floppy polling.
@@ -42,10 +42,9 @@ echo &quot;(hd0) /dev/loop0&quot; &gt; build/tmp/device.map
 #   * Include the basic set of modules we need in the Grub image.
 #   * Install grub into the filesystem at our loopback mountpoint.
 #   * Install the MBR to the loopback device itself.
-grub2-install --no-floppy
---grub-mkdevicemap=build/tmp/device.map
---modules=&quot;biosdisk part_msdos ext2 configfile normal multiboot&quot;
---root-directory=build/tmp/p1
+grub-install --no-floppy \
+--modules="biosdisk part_msdos ext2 configfile normal multiboot" \
+--root-directory=`pwd`/build/tmp/p1 \
 /dev/loop0
 
 # Unmount the loopback
