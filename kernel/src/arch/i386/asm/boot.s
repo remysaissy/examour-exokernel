@@ -17,32 +17,32 @@
 ** Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/* exAmour's environnement manager layer 0 */
-/* i8253  manager */
+.set ALIGN,    1<<0             /* align loaded modules on page boundaries */
+.set MEMINFO,  1<<1             /* provide memory map */
+.set FLAGS,    ALIGN | MEMINFO  /* this is the Multiboot 'flag' field */
+.set MAGIC,    0x1BADB002       /* 'magic number' lets bootloader find the header */
+.set CHECKSUM, -(MAGIC + FLAGS) /* checksum of above, to prove we are multiboot */
 
-#include	<examour/env/timer.h>
-#include	<examour/core/asm.h>
+.section .multiboot
+.align 4
+.long MAGIC
+.long FLAGS
+.long CHECKSUM
 
-/* TODO: use macros instead of hardcoded hexa codes */
-/* TODO: it doesn't seems to work correctly... */
-void		timer_set(uint32_t ms)
-{
-  if (ms == 0)
-    ms = 0xffff;
-/*   ms = MS_TO_HZ(ms); */
-/*    ms = LATCH(ms); */
+.section .bootstrap_stack, "aw", @nobits
+stack_bottom:
+        .skip 16384
+stack_top:      
+       
+.section .text
+.global _start        
+.type _start, @function
+_start:
+        movl $stack_top, %esp
+        call kmain        
+        cli
+        hlt
+.hang:
+        jmp .hang
 
-  outb(I8254_CONTROL, I8254_MODE2|I8254_RD_LSB_MSB);
-  outb(I8254_TIMER0, (ms & 0xff));
-  outb(I8254_TIMER0, (ms >> 8) & 0xff);
-}
-
-uint32_t	timer_get(void)
-{
-  uint32_t	counter;
-
-  outbp(I8254_CONTROL, 0);
-  counter = inb(I8254_TIMER0);
-  /* TODO: convert counter in ms */
-  return (counter);
-}
+.size _start, . - _start
