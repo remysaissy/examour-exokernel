@@ -23,26 +23,18 @@
 .set MAGIC,    0x1BADB002       /* 'magic number' lets bootloader find the header */
 .set CHECKSUM, -(MAGIC + FLAGS) /* checksum of above, to prove we are multiboot */
 
+
 .section .multiboot
+.code32
 .align 4
-.long MAGIC
-.long FLAGS
-.long CHECKSUM
+multiboot_header:
+        .long MAGIC
+        .long FLAGS
+        .long CHECKSUM
 
-.section .bootstrap_stack, "aw", @nobits
-stack_bottom:
-        .skip 16384
-stack_top:      
-       
-.section .text
-.global _start        
-.type _start, @function
-_start:
-        movl $stack_top, %esp
-        call kmain        
-        cli
-        hlt
-.hang:
-        jmp .hang
+.section .text.boot32
+.code32
+_start32:
+        /* 32bits to 64 bits mode. */
+        jmp _start64
 
-.size _start, . - _start

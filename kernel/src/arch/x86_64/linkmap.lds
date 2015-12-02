@@ -17,25 +17,21 @@
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-ENTRY(_start)
-
-OUTPUT_FORMAT(elf32-i386)
+ENTRY(_start32)
 
 SECTIONS
 {
 
-  /DISCARD/ :
-  {
-    *(".text.inlined*")
-    *(.comment)
-    *(.eh_frame)
-  }
-
   . = 0x00007E00; /* Conventional memory. End of kernel is at 0x0007FFFF (480kib max). */
+
+ .boot32 :
+ {
+    *(.multiboot)
+    *(.text.boot32)
+ }
 
  .text BLOCK(4K) : ALIGN(4K)
  {
-   *(.multiboot)
    *(.text)
  }
 
@@ -60,4 +56,11 @@ SECTIONS
   *(.bss)
   *(.bootstrap_stack)
  }
+
+  /DISCARD/ :
+  {
+    *(".text.inlined*")
+    *(.comment)
+    *(.eh_frame)
+  }
 }
